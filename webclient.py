@@ -4,7 +4,7 @@
 import socket, sys
 
 # parse inputs
-server_name = "{}".format(sys.argv[1])
+server_name = sys.argv[1]
 if len(sys.argv)>2: 
   port_number = int(sys.argv[2])
 else:
@@ -29,5 +29,4 @@ while 1:
 
 # close
 s.close()
-
 print(d)
