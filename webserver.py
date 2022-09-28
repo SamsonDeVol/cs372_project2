@@ -21,8 +21,7 @@ while 1:
 
   # inner loop for recieving
   while 1:
-    d = new_socket.recv(4096).decode()
-    if "\r\n\r\n" in d:
+    if "\r\n\r\n" in new_socket.recv(4096).decode():
       break
 
   new_socket.sendall("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 6\r\nConnection: close\r\n\r\nHello!\r\n".encode())
